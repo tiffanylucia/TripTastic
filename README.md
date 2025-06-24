@@ -1,4 +1,4 @@
-# Travel-planner
+# TripTastic
 I have designed a website called TripTastic. It is a simple website that allows users to plan their trips. 
 The colour system is a combination of blue and white, which gives a sense of calmness and serenity.
 The pallete includes:
