@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Planner</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+  <ul class="nav-links">
+  <ul class="nav-menu">
+    <li class="hideOnMobile"><a href="#Home">Home</a></li>
+    <li class="hideOnMobile"><a href="#About">About</a></li>
+    <li class="hideOnMobile"><a href="#Services">Services</a></li>
+
+    <!-- Site Title in the middle -->
+    <li class="site-title">TripTastic</li>
+
+    <li class="hideOnMobile"><a href="#Explore">Explore</a></li>
+    <li class="hideOnMobile"><a href="#Contact">Contact</a></li>
+    <li class="menu-button" onclick="showSidebar()">
+      <a href="#"><svg onclick="toggleMenu()"
+          xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" fill="none"
+          stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </a>
+  </ul>
+</nav>
+
+
+<div class="image-container" id="Home">
+            <img src="./assets/image1.png" width="700" height="500" alt="Travel Image"> 
+            <div class="text-overlay">
+                <h1>Your guide to an adventure of a life-time!</h1>
+            <p>Link yourself with the best experienced tour guides,travel agents and travel influencers</p>
+            <button onclick="getstarted('Started')">Get Started</button>
+           </div>
+        </div>
+
+         <script>
+    function getstarted(Started) {
+        if (Started === 'Started') {
+            alert("Welcome to TripTastic! Let's start planning your dream trip!");
+        }    
+    }
+  </script>
+
+  <section class="section two-column">
+    <div class="text">
+      <h6>HOW IT WORKS</h6>
+      <h2>We Help You Plan for Your Trip.</h2>
+      <p>Through booking your flights and travel accommodations! </p>
+      <button>Find A Travel Guide </button>
+    </div>
+    
+    <img src="./assets/image2.png" width="700" height="500"> 
+  </section>
+
+  <section class="section services">
+    <div class=""></div>
+    <h6>SERVICES</h6>
+    <div class="header"></div>
+    <h2>Your Pilot To An<br /> Unforgetable Getaway.</h2>
+    <div class="services-container"></div>
+      <p>Find professional assistance to<br /> an exciting vacation.</p>
+    </div>
+  </section>
+
+  
+   <section class="section cards">
+    <div class="card">
+      <h3>Booking<br /> Services</h3>
+      <p>We help you book flights<br /> hotels,airport transfers<br />and rental cars.</p>
+      <button onclick="learnMore('Booking')">Learn more</button>
+
+    </div>
+    <div class="card">
+      <h3>Travel<br /> Documentation</h3>
+      <p>We support you on trip documents <br /> like passports,visas,travel insurance<br /> and any other paperwork needed.</p>
+      <button onclick="learnMore('Travel')">Learn More</button>
+    </div>
+  </section>
+
+  <section class="section cards">
+    <div class="card">
+      <h3>Emergency Support.</h3>
+      <p> We are here to help our customers in case of accidents or other problems<br />that come up during your trip.</p>
+      <button onclick="learnMore('Emergency')">Learn more</button>
+    </div>
+  </section>
+
+  <script>
+    function learnMore(service) {
+      if (service === 'Booking') {
+        alert("More about Booking: \nWe provide personalized recommendations for flights, hotels and also offer better loyalty rewards or exclusive rates!");
+      } else if (service === 'Travel') {
+        alert("More about Travel Documentation: \nBefore our client leaves on a trip, we make sure that all of their paperwork is in order😊.");
+      }
+      else if (service === 'Emergency') {
+        alert("More about Emergency Support: \nWe are here to help our clients in case of an emergency, they might rebook flights, arrange alternative accommodations, or we may give advice on medical help or legal issues.");
+      }
+    }
+  </script>
+
+<section class="section testimonial">
+  <div class=""></div>
+    <h6>TESTIMONIALS</h6>
+    <div class="header"></div>
+    <h2>What Our Beneficiaries<br /> Are Saying</h2>
+    
+    <p>Hear it straight from our clients<br /> because their feedback fuels us <br /> and it is a proof that we are trusted by thousands.</p>
+
+</section>
+
+
+<section class="testimonial-container"></section>
+    <div class="testimonial-container" id="testimonialSlider">
+      <div class="testimonial">
+        <p>"I write to formally convey our sincere thanks and appreciation of the tour<br /> organised for us by TripTastic.We all had a great relaxed time<br /> and will carry the memories for our life."</p>
+        <div class="author">— Lucy., 30</div>
+      </div>
+      <div class="testimonial dark">
+        <p>"It was a once in a life time experience. Good service from drivers and hotels.<br /> Consider this as appreciation from all of us to the splendid service & cooperation from all the staff of TripTastic."</p>
+        <div class="author">— Iran S., 41</div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevTestimonial()">←</button>
+      <button onclick="nextTestimonial()">→</button>
+    </div>
+
+    <script>
+    const slider = document.getElementById('testimonialSlider');
+    let index = 0;
+
+    function showTestimonial(i) {
+      const width = slider.offsetWidth;
+      slider.scrollTo({ left: width * i, behavior: 'smooth' });
+    }
+
+    function prevTestimonial() {
+      index = (index === 0) ? slider.children.length - 1 : index - 1;
+      showTestimonial(index);
+    }
+
+    function nextTestimonial() {
+      index = (index + 1) % slider.children.length;
+      showTestimonial(index);
+    }
+  </script>
+
+
+   <section class="partners">
+        <p>Our  Partners</p>
+        
+            <img src="./assets/image13.png" width="200" height="100" alt="">
+            <img src="./assets/image14.png" width="200" height="100" alt="">
+            <img src="./assets/image10.png" width="200" height="100"  alt="">
+            <img src="./assets/image11.png" width="150" height="100"  alt="">
+            <img src="./assets/image12.png" width="100" height="100"  alt="">
+        
+    </section>
+
+    <section class="section explore">
+  <div class=""></div>
+    <h6>EXPLORE & LEARN</h6>
+    <div class="header"></div>
+    <h2>Travel Aids <br /> And Amenities</h2>
+    <div class="explore-container"></div>
+    <p>Read our curated travel blogs<br /> for tips and inspiration.</p>
+    </section>
+
+    <div class="cards">
+      <div class="card articles">
+        <h3>Travel <br /> Communities</h3>
+        <p>Join our travel communities<br /> to connect with fellow travelers.</p>
+        <button onclick="explore('Communities')">Explore</button>
+      </div>
+
+      <div class="card meditation">
+        <h3>Travel<br /> Guides</h3>
+        <p>Expert advice and tips for<br /> your destination.</p>
+        <button onclick="explore('Travel')">Explore</button>
+      </div>
+
+      <div class="card webinars">
+        <h3>Travel<br /> Blogs</h3>
+        <p>Read our curated travel blogs<br /> for tips and inspiration.</p>
+        <button onclick="explore('Blogs')">Explore</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function explore(explore) {
+      if (explore === 'Communities') {
+        alert("More about Communities: \nThis is where people come together to share experiences, advice, stories, and resources related to travel!");
+      } else if (explore === 'Travel') {
+        alert("More about Travel Guides: \nThis is a resource that provides information about destinations to help you travelers plan for your trips.😊.");
+      }
+      else if (explore === 'Blogs') {
+        alert("More about Blogs: \Travel blogs often share the blogger’s own travel experiences—what they did, where they went, what they loved (or didn’t), and what they learned!");
+      }
+    }
+  </script>
+
+  <section class="community-section">
+    <div class="community-text">
+      <h6>COMMUNITY</h6>
+      <h2>We are with you every<br /> step of the way</h2>
+      <p>Meet fellow travelers, swap stories, and<br /> feel supported in a welcoming community.</p>
+      <button>Join The Community</button>
+    </div>
+    <div class="community-image">
+      <img src="./assets/image8.png" alt="Community Art"/>
+    
+    </div>
+  </section>
+
+   <div class="faq-container">
+    <div class="faq-text">
+        <h6>NEED HELP?</h6>
+      <h1>Frequently <br /> Asked Questions</h1>
+      <p>Curious about how we help you travel better?<br /> Just get your questions answered here.</p>
+     
+      <div class="faq-image">
+      <img src="./assets/image7.png" width="700" height="500" alt="" >
+    </div>
+</div>
+    <div class="faq-items">
+      <!-- FAQ Item Template -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What are your business opening hours?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We are open Monday to Friday from 9:00 AM to 5:00 PM. On weekends, we are closed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do I make a booking?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            You can make a booking through our website or by calling our customer service number. Simply select your desired service and follow the prompts to complete your booking.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do I need travel insurance?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            Yes, we highly recommend having travel insurance to cover any unexpected events such as trip cancellations, medical emergencies, or lost luggage. It provides peace of mind during your travels.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you offer discounts or promo codes?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            Yes, we frequently offer discounts and promo codes. You can find the latest offers on our website or subscribe to our newsletter to receive exclusive deals directly in your inbox.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you book airport transfers or shuttles?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            Yes, we can arrange airport transfers and shuttles for you. Please provide us with your flight details and we will organize the transportation to and from the airport.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Are meals included in the hotel booking?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            It depends on the hotel and the package you choose. Some hotels offer meal plans that include breakfast, lunch, and dinner, while others may only provide breakfast. Please check the details of your booking or contact us for clarification.
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Collapse any other open FAQ
+        faqItems.forEach(el => {
+          if (el !== item) {
+            el.classList.remove('active');
+            el.querySelector('.faq-icon').textContent = '+';
+          }
+        });
+
+        // Toggle the clicked FAQ
+        const isActive = item.classList.toggle('active');
+        const icon = item.querySelector('.faq-icon');
+        icon.textContent = isActive ? '−' : '+';
+      });
+    });
+  </script>
+
+<section class="section connect">
+  <div class=""></div>
+    <h6>CONNECT WITH US</h6>
+    <h2>Travel with confidence <br /> We’ve got your back</h2>
+  <div class="connect-container">
+    <p>Questions, travel tips, or just looking for inspiration?<br /> Contact us anytime!</p>
+  </div>
+</section>
+
+<div class="container">
+    <div class="contact-info">
+      <h2>Contact Details:</h2>
+      <p><strong>Email:</strong> support@tripTastic.com</p>
+      <p><strong>Phone:</strong> +254746065356</p>
+      <p><strong>Address:</strong> 012 Ruai Bypass, Ruai City, RA 81379</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p><em>We typically respond within 12 hours.</em></p>
+    </div>
+
+    <div class="message-form">
+      <h2>Send Us a Message</h2>
+      <form id="contactForm">
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+        <div class="alert" id="successMessage">Message sent successfully!</div>
+      </form>
+    </div>
+  </div>
+
+  
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (email === "" || message === "") {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      // Simulate success (you could add API call here)
+      successMessage.style.display = 'block';
+
+      // Optionally clear form fields
+      form.reset();
+
+      // Hide success message after 3 seconds
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 3000);
+    });
+  </script>
+
+<!-- Footer Section -->
+  <div class="footer-section">
+    <!-- Left Card -->
+    <div class="footer-card footer-left">
+      <h2>TripTastic</h2>
+      <div class="footer-columns">
+        <div><a href="#">About</a></div>
+        <div><a href="#">Services</a></div>
+        <div><a href="#">Tourguides</a></div>
+        <div><a href="#">Resources</a></div>
+        <div><a href="#">Contact</a></div>
+        <div><a href="#">Instagram</a></div>
+        <div><a href="#">Facebook</a></div>
+        <div><a href="#">YouTube</a></div>
+        <div><a href="#">LinkedIn</a></div>
+        <div><a href="#">Terms Of Use</a></div>
+        <div><a href="#">Privacy Policy</a></div>
+      </div>
+      <p style="margin-top: 20px; font-size: 12px; color: #888;">© [2030] TripTastic. All Rights Reserved.</p>
+    </div>
+
+    <!-- Right Card -->
+    <div class="footer-card footer-right">
+      <h3>Discover Travel Care,<br>Travel Advice,<br>and Travel-Life Balance.</h3>
+      <button>Reach out for help</button>
+    </div>
+  </div>
+
+
+ 
